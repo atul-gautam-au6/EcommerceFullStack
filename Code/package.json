@@ -6,7 +6,9 @@
   "scripts": {
     "client": "cd clienside && npm start",
     "server": "nodemon --watch serverside --exec babel-node serverside/server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "build": "rm -rf dist && babel serverside -d dist",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm run build && cd clienside && npm install && npm run build"
   },
   "author": "Atul Kumar gautam",
   "license": "ISC",

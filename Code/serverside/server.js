@@ -27,6 +27,7 @@ app.get('/api/products/:id',(req,res)=>{
 app.get('/api/products',(req,res) =>{
     res.send(data.products)
 })
+app.use(express.static('../clienside/build'))
 
 app.listen(8080,()=>{
     console.log('server running at port number 8080')

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb+srv://moviesCollectionData:atul12345@G@cluster0-perne.mongodb.net/mywebsite?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://atul:1234@cluster0.c9ppv.mongodb.net/shopingapp?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true

@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "cd clienside && npm run build",
+    "install-client": "cd clienside && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "starth": "nodemon --watch serverside --exec babel-node server.js",
     "client": "cd clienside && npm start",
-    "server": "nodemon --watch serverside --exec babel-node serverside/server.js",   
-    "start": "concurrently \"npm run server\" \"npm run client\""
-   
+    "start": "concurrently -n 'server,client' -c 'red,green' \"npm run starth\"  \"npm run client\""
   },
   "author": "Atul Kumar gautam",
   "license": "ISC",
@@ -24,6 +26,8 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.28"
+    "mongoose": "^5.9.28",
+    "mongoose-paginate": "^5.0.3",
+    "react-css-loaders": "0.0.6"
   }
 }

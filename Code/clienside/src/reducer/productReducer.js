@@ -27,6 +27,7 @@ export function productDetailReducer(state={products:{}},action){
             return {loading:false,products:action.payload};
 
         case PRODUCT_DETAILS_FAIL:
+            // console.log(action.payload)
             return {loading:false,error:action.payload}            
     
         default:

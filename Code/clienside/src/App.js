@@ -42,6 +42,17 @@ function App() {
               <Link to="/signin">Signin</Link>
             }
             {/* <a href="sigin.html">Sign In</a> */}
+            {userInfo && userInfo.isAdmin && (
+              <div className="dropdown">
+                <a href="#">Admin</a>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/orders">Orders</Link>
+                    <Link to="/products">Products</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
         </div>
     </header>
 
@@ -50,10 +61,13 @@ function App() {
          <button className="sidebar-close-button" onClick={closeMenu}>X</button>
          <ul>
              <li>
-                 <a href="index.html">Pants</a>
+                <Link to='?category=paint'>Paint</Link>
              </li>
              <li>
-                 <a href="index.html">Pants</a>
+             <Link to="?category=paint">Shirts</Link>
+             </li>
+             <li>
+             <Link to="?category=make">MakeUp</Link>
              </li>
          </ul>
     </aside>

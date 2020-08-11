@@ -13,6 +13,7 @@ const ProductScreens = (props) => {
         state.productdetailList
         )
     const {products,loading,error}=productDetails
+    console.log(products)
     const dispatch = useDispatch();
     
     useEffect(() => {
@@ -45,6 +46,7 @@ const handleAddToCart = () =>{
                         <li>
                             {products.rating} Stars ({products.numReviews} Reviews)
                         </li>
+                        <li>MRP:${products.Mrp}</li>
                         <li>
                             Price:<b>${products.price}</b>
                         </li>
